@@ -38,7 +38,7 @@ function preload() {
     bg = loadImage('src/img/fundo.png');
     menuImg = loadImage('src/img/menu.jpg');
     fontGame = loadFont('src/fonts/PixelGameFont.ttf');
-    
+
     // sounds
     soundFormats('mp3', 'wav');
     backgroundSound = loadSound('src/sounds/level1.mp3');
@@ -79,7 +79,7 @@ function setup() {
     inimigos[12] = new Inimigos(95, 8310, animation);
 
     backgroundSound.loop(1, 1, 0.2); // % do volume
-
+    resolucao();
 }
 
 function draw() {
@@ -188,5 +188,24 @@ function keyReleased() {
     }
     if (key == 'z') {
         if (personagem.vy < 0) personagem.vy = 0;
+    }
+}
+
+function resolucao() {
+    let canvas = document.getElementById('defaultCanvas0');
+    if (canvas) {
+        const rel = 1.33;
+        const height = window.innerHeight - 20;
+        const width = window.innerWidth - 20;
+        console.log(height + ' ' + width);
+        if (height > width) {
+            console.log(width / rel);
+            canvas.style.width = width + "px";
+            canvas.style.height = (width / rel) + "px";
+        } else {
+            console.log(height * rel);
+            canvas.style.width = (height * rel) + "px";
+            canvas.style.height = height + "px";
+        }
     }
 }
