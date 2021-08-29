@@ -43,10 +43,10 @@ function preload() {
     soundFormats('mp3', 'wav');
     backgroundSound = loadSound('src/sounds/level1.mp3');
     punchSound = createAudio('src/sounds/punch.wav');
-    coinSound = loadSound('src/sounds/coins15.mp3');
-    jumpingSound = loadSound('src/sounds/jumping.wav');
+    coinSound = loadSound('src/sounds/coins.wav');
+    jumpingSound = loadSound('src/sounds/jumping1.wav');
     diedSound = createAudio('src/sounds/died.wav');
-    crashSound = loadSound('src/sounds/crash.mp3');
+    crashSound = loadSound('src/sounds/crash.wav');
     enemyDiedSound = loadSound('src/sounds/crow.mp3');
 }
 
